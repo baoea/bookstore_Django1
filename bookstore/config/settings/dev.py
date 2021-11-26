@@ -14,9 +14,7 @@ CORS_ORIGIN_WHITELIST = [
 INTERNAL_IPS = ["127.0.0.1"]
 
 MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]  # NOQA
-REST_FRAMEWORK["DEFAULT_RENDERER_CLASSES"] += (  # NOQA
-    "rest_framework.renderers.BrowsableAPIRenderer",
-)
+REST_FRAMEWORK["DEFAULT_RENDERER_CLASSES"] += ("rest_framework.renderers.BrowsableAPIRenderer",)  # NOQA
 
 
 def show_toolbar(request):
@@ -26,4 +24,3 @@ def show_toolbar(request):
 DEBUG_TOOLBAR_CONFIG = {
     "SHOW_TOOLBAR_CALLBACK": show_toolbar,
 }
-
