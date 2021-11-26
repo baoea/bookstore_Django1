@@ -1,0 +1,9 @@
+FROM python:3.9.7
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /code
+ADD requirements /code/requirements
+RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements/dev.txt
+ADD . /code
+
+CMD python bookstore/manage.py runserver 0.0.0.0:8000

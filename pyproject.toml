@@ -1,0 +1,44 @@
+[tool.black]
+line-length = 79
+target-version = ["py38"]
+exclude = '''
+/(
+    \.git
+  | \.pytest_cache
+  | \.tox
+  | \.venv
+  | \.vscode
+  | __pycache__
+  | build
+  | coverage
+  | dist
+  | htmlcov
+  | migrations
+  | node_modules
+)/
+'''
+
+[tool.isort]
+sections = [
+  "FUTURE",
+  "STDLIB",
+  "THIRDPARTY",
+  "FIRSTPARTY",
+  "LOCALFOLDER",
+]
+known_first_party = ["faty"]
+skip_glob = [
+  "*/.venv/*",
+  "*/.pytest_cache/*",
+  "*/coverage/*",
+  "*/htmlcov/*",
+  "*/migrations/*",
+  "*/node_modules/*",
+  "src/*",
+  "deploy/dramatiq-pg-gevent",
+]
+multi_line_output = 3
+line_length = 88
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
